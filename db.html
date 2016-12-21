@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<title>dbReading</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin:0;
+		list-style: none;
+		text-decoration: none;
+	}
+	.title{
+		width: 100%;
+		height: 30px;
+		background: grey;
+	}
+	.title ul{
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		color: white;
+		font-size: 13px;
+	}
+	.nav-top{
+		width: 600px;
+		margin-left: 25px;
+	}
+	.nav-top li{
+		float: left;
+		margin-right: 28px;
+	}
+	.nav-top li a{
+		color: white;
+	}
+	.nav-top li a:hover{
+		font-size: 14px;
+	}
+	.nav-top-right{
+		position: absolute;
+		right: 0;
+		width: 300px;
+		margin-right: 20px;
+	}
+	.nav-top-right li{
+		float: right;
+		margin-left:20px; 
+	}
+	.nav-top-right li a{
+		color: white;
+	}
+	.nav-top-right li a:hover{
+		font-size: 14px;
+	}
+	.nav-bottom{
+		height: 70px; 
+    	background:#f6f6f1;
+		top: 100px;
+		width: 100%;
+		position: absolute;
+	}
+	.nav-bottom ul{
+		height: 70px;
+		width:400px;
+		line-height: 70px;
+		position: relative;
+		left: 20%;
+	}
+	.nav-bottom ul li a{
+		float: left;
+		margin-right: 20px;
+		font-size: 14px;
+		font-weight: 800;
+		color:black;
+	}
+	.nav-bottom ul li a:hover{
+		font-size: 20px;
+	}
+	.reading{
+		float: left;
+	}
+	.input-wrapper{
+		width: 100%;
+		height: 100px;
+		background: #f6f6f1;
+	}
+	img{
+		position: relative;
+		float: left;
+		margin-left: 30px;
+		margin-top: 15px;
+	}
+	.input{
+		position: absolute;
+		width: 650px;
+		height: 25px;
+		left: 20%;
+		margin-top: 30px;
+	}
+	.search{
+		width: 550px;
+		height: 25px;
+	}
+	.submit{
+		font-size: 14px;
+		font-weight: 700;
+		color: green;
+		width: 50px;
+		height: 30px;
+		margin-left: -5px;
+		/*background-image: url('1.png');
+		background-size: 100%;
+		background-repeat: no-repeat;*/
+		background: grey;
+		color: white;
+	}
+	.content{
+		position: relative;
+		left: 50%;
+		margin-left: -330px;
+    	margin-top: 110px;
+    	width: 550px;
+		margin-bottom: 100px;
+	}
+	.content .firstDiv{
+		position: relative;
+		width: 550px;
+		height: 160px;
+		padding-top: 20px;
+		border-top:1px dashed black;
+	}
+	.content div div:nth-of-type(1){
+		width: 70px;
+		height: 90px;
+		position: absolute;
+		right: 0px;
+		background-size: 100% 100%;
+	}
+	.content div span{
+		display: block;
+		margin-right: 60px;
+	}
+	.content div div:nth-of-type(2){
+		display: inline-block;
+		height: 30px;
+		margin-right: 70px;
+	}
+	.content div div p:nth-of-type(1){
+		color: #ECC805;
+		height: 30px;
+		line-height: 30px;
+		display: inline-block;
+    	margin-left: 40px;
+	}
+	.content div div p:nth-of-type(2){
+		margin-left: 20px;
+		height: 30px;
+		line-height: 30px;
+		display: inline-block;
+ 		font-size: 12px;
+	}
+	.content div div p:nth-of-type(3){
+		margin-left: 40px;
+		height: 30px;
+		line-height: 30px;
+		display: inline;
+ 		font-size: 12px;
+ 		width: 300px;
+	}
+	.content div div:nth-of-type(3){
+		font-size: 10px;
+    	width: 475px;
+    	height: 70px;
+    	overflow: hidden;
+    	color: rgba(125, 122, 122, 0.8);
+    	text-indent: 2em;
+    	font-weight: 600px;
+    	position: absolute;
+    	bottom: 10px;
+	}
+	.content a{
+		position: absolute;
+		bottom: -30px;
+		height: 30px;
+		width: 600px;
+		line-height: 30px;
+		text-align: center;
+		border:0px solid black;
+		border-radius: 3px;
+		background: #EAE5E5;
+		text-decoration: none;
+	}
+	.content .fifthDiv{
+		height: 30px;
+		position: absolute;
+		bottom: -60px;
+		width: 600px;
+		line-height: 30px;
+		text-align: center;
+		background: #EAE5E5;
+		border:0px solid black;
+		border-radius: 3px;
+		background:white;
+	}
+	.content .fifthDiv:hover{
+		cursor: pointer;
+	}
+	</style>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<div class='title'>
+		<ul class='nav-top'>
+			<li><a href="">豆瓣</a></li>                  
+			<li><a href="">读书</a></li>
+			<li><a href="">电影</a></li>
+			<li><a href="">音乐</a></li>
+			<li><a href="">同城</a></li>
+			<li><a href="">小组</a></li>
+			<li><a href="">阅读</a></li>
+			<li><a href="">FM</a></li>
+			<li><a href="">东西</a></li>
+			<li><a href="">市集</a></li>
+			<li><a href="">更多</a></li>
+		</ul>
+		<ul class='nav-top-right'>
+			<li><a href="">注册</a></li>
+			<li><a href="">登录</a></li>
+			<li><a href="">下载豆瓣客户端</a></li>
+		</ul>
+	</div>
+	
+	<div class='input-wrapper'>
+		<img src="2.png" alt="">
+		<div class='input'>
+			<input type='text'  id='input' class='search'>
+			<input type='submit' class='submit' value='搜索'>
+		</div>
+	</div>
+	
+	<div class='nav-bottom'>
+		<ul>
+			<li><a href="">分类浏览</a></li>     
+			<li><a href="">购书单</a></li>
+			<li><a href="">电子图书</a></li>
+			<li><a href="">纸书</a></li>
+		</ul>
+	</div>
+	<div class='content'></div>
+	<script type="text/javascript">
+	var $btn=$('.submit');
+	var $input=$('.search');
+	$btn.on('click',function(){
+		$('.content').html('')
+		$('.wrapper').html('搜索：'+$input.val())
+		$.ajax({
+			url:'https://api.douban.com/v2/book/search',
+			dataType:'jsonp',
+			type:'GET',
+			data:{q:$input.val(),start:0,count:10},
+			success:function(data){
+				create(data);
+			}
+		})
+	})
+
+	var $fifthDiv=$('<div class="fifthDiv"></div>');
+	var $a=$('<a style="background:white;color:black;"href="#input">Top</a>')
+	function create(data){
+		
+		for (var i = 0; i <10; i++) {
+			var $firstDiv=$('<div class="firstDiv"></div>');
+			var $secondDiv=$('<div></div>');
+			var $thirdDiv=$('<div></div>');
+			var $forthDiv=$('<div></div>');
+			var $span=$('<span></span>');
+			var $p1=$('<p></p>');
+			var $p2=$('<p></p>');
+			var $p3=$('<p></p>');
+			$('.content').append($firstDiv)
+			$firstDiv.append($secondDiv).append($span).append($thirdDiv).append($forthDiv)
+			$thirdDiv.append($p1).append($p2).append($p3)
+			$secondDiv.css('background-image','url('+data.books[i].image+')')
+			$span.html('[书籍]'+data.books[i].title)
+			$p1.html(data.books[i].rating.average+'分')
+			$p2.html('('+data.books[i].id+'评价)')
+			$p3.html(data.books[i].author[0]+'\\'+data.books[i].translator[0]+'\\'+data.books[i].publisher+'\\'+data.books[i].pubdate)
+			$forthDiv.html(data.books[i].summary)
+		}
+		$('.content').append($a)
+		$('.content').append($fifthDiv)
+		if (data.books.length==10) {
+			$fifthDiv.html('Search more')
+		}else{
+			$fifthDiv.html('没有了！！！')
+		}
+	}
+	var a=10;
+	$fifthDiv.on('click',function(){
+		$.ajax({
+			url:'https://api.douban.com/v2/book/search',
+			dataType:'jsonp',
+			type:'GET',
+			data:{q:$input.val(),start:a,count:10},
+			success:function(data){
+				create(data);
+			}
+		})
+		a=a+10;
+	})
+	</script>
+</body>
+</html>
